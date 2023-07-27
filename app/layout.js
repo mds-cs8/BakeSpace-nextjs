@@ -1,10 +1,5 @@
 import Header from "./components/Header/Header";
 import "./globals.css";
-import { Ubuntu } from "next/font/google";
-const font = Ubuntu({
-  subsets: ["latin"],
-  weight: ["300", "400", "700"],
-});
 
 export const metadata = {
   title: "BAKESPACE | HOME",
@@ -14,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body>
         <Header />
         <div>{children}</div>
       </body>
