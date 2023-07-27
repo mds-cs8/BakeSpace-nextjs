@@ -3,25 +3,50 @@
 @tailwind utilities;
 
 :root {
+  --rext-color: #ef6466;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+/* STYLE NAV LINK  */
+.activeLink {
+  color: var(--rext-color) !important;
+  border-bottom: 2px solid var(--rext-color);
+}
+/* STYLE NAV LINK  */
+.section-title {
+  color: #252525;
+  
+  position: relative;
+}
+.section-title::before {
+  content: "";
+  width: 30px;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  background-color: #ef6565;
+  -webkit-transform: translate(100%, -50%);
+  transform: translate(100%, -50%);
+}
+.about-btn:hover {
+  transition: all 0.5s ease;
+  background: transparent !important;
+  color: #ef6565 !important;
+  border: 1px solid #ef6565 !important;
+}
 
+@media only screen and (min-width: 900px) {
+  .slider {
+    height: 90vh;
+    width: 100%;
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
