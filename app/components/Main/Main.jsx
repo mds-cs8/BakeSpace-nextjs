@@ -21,7 +21,7 @@ const Main = () => {
       <Stack sx={{ width: "100%" }}>
         <div className="flex w-full justify-center items-center">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-5 px-5 md:px-0">
-            {["a", "a", "a", "a", "a", "a"].map((item) => {
+            {["a", "b", "c", "d", "e", "f"].map((item) => {
               return (
                 <Link href={"/"} key={item}>
                   <ProductCard />

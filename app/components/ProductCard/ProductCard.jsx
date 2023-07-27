@@ -43,7 +43,7 @@ export const ProductCard = () => {
       >
         <Image
           style={{ objectFit: "contain" }}
-          class="img w-full "
+          className="img w-full "
           src={img}
           alt="Sunset in the mountains"
         />
@@ -88,26 +88,24 @@ export const ProductCard = () => {
         </Typography>
       </CardContent>
       <CardActions sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Link href={""}>
-          <Button
-            variant="contained"
-            endIcon={<AddShoppingCartIcon />}
-            size="small"
-            sx={{
-              background: "transparent",
-              color: "#4cc0ff",
-              border: "1px solid #fff",
+        <Button
+          variant="contained"
+          endIcon={<AddShoppingCartIcon />}
+          size="small"
+          sx={{
+            background: "transparent",
+            color: "#4cc0ff",
+            border: "1px solid #fff",
+            boxShadow: "none",
+            "&:hover": {
+              border: "1px solid #4cc0ff",
+              background: "#fff",
               boxShadow: "none",
-              "&:hover": {
-                border: "1px solid #4cc0ff",
-                background: "#fff",
-                boxShadow: "none",
-              },
-            }}
-          >
-            Add to cart
-          </Button>
-        </Link>
+            },
+          }}
+        >
+          Add to cart
+        </Button>
         <Rating
           name="half-rating-read"
           defaultValue={4.5}
