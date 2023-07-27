@@ -23,13 +23,7 @@ export const AboutUs = () => {
       >
         <h2 className="section-title text-2xl font-bold">About us</h2>
         <p>
-          We're a platform that connects home bakers with customers who want
-          delicious cakes delivered to their doorstep. Our easy-to-use online
-          shop creation tools and supply chain partnerships make it simple for
-          bakers to expand their reach and access high-quality ingredients.
-          We're passionate about supporting local businesses and creating
-          meaningful connections in the baking community. Join us in our mission
-          to digitize the industry!
+         test
         </p>
         <Button
           className="about-btn"
