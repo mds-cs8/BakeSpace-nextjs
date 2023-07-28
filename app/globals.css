@@ -8,6 +8,9 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+body {
+  background: #f8f8f8;
+}
 /* STYLE NAV LINK  */
 .activeLink {
   color: var(--rext-color) !important;
@@ -16,7 +19,7 @@
 /* STYLE NAV LINK  */
 .section-title {
   color: #252525;
-  
+
   position: relative;
 }
 .section-title::before {

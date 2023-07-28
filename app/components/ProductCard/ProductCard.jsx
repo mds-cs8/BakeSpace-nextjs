@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
-import img from "../../../public/img/slide1.jpg";
+import img from "../../../public/img/slide3.jpg";
 
 import React from "react";
 import Image from "next/image";
