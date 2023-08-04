@@ -23,7 +23,7 @@ export const ProductCard = () => {
     <Card
       sx={{
         position: "relative",
-        maxWidth: 400,
+        maxWidth: 300,
         mt: 8,
         ":hover .img": {
           scale: "1.1",
@@ -35,23 +35,16 @@ export const ProductCard = () => {
         },
       }}
     >
-      <CardMedia
-        height="200"
-        sx={{
-          objectFit: "contain",
-        }}
-      >
-        <Image
-          style={{ objectFit: "contain" }}
-          className="img w-full "
-          src={img}
-          alt="Sunset in the mountains"
-        />
-      </CardMedia>
+      <Image
+        style={{ width: "100%", height: "100%" }}
+        className="img "
+        src={img}
+        alt="Sunset in the mountains"
+      />
 
       <Chip
         icon={<DeliveryDiningIcon color="white" />}
-        label="2 days delivery "
+        label={"2 days"}
         sx={{
           borderRadius: "2px",
           background: "#ef6565",
@@ -70,21 +63,21 @@ export const ProductCard = () => {
               component="div"
               sx={{ fontWeight: "bold" }}
             >
-              Cake
+              name
             </Typography>
             <Typography variant="subtitle2" gutterBottom>
-              SACCHARO
+              Lorem ipsum
             </Typography>
           </Box>
 
           <Typography gutterBottom variant="h6" component="div">
-            100SAR
+            100$
           </Typography>
         </Stack>
 
         <Typography variant="body2" color="text.secondary">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-          accusantium autem, quo perspiciatis, nam non dolorem
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos
+          excepturi natus enim inventore, itaque nemo ipsa expedita fugiat quasi
         </Typography>
       </CardContent>
       <CardActions sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -108,7 +101,7 @@ export const ProductCard = () => {
         </Button>
         <Rating
           name="half-rating-read"
-          defaultValue={4.5}
+          defaultValue={3}
           precision={0.5}
           readOnly
         />

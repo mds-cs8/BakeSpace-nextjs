@@ -1,6 +1,6 @@
 "use client";
 // IMPORT UI LIBRARY AND IMG AND ICONS
-import { Wrapper } from "@/app/components/Wrapper";
+import { Wrapper } from "../Wrapper";
 import { React, useState, useEffect } from "react";
 import Logo from "../../../public/img/logo2.png";
 import Link from "next/link";
@@ -13,8 +13,26 @@ import Image from "next/image";
 // IMPORT COMPONENTS
 import Menu from "./Menu";
 import MenuMobile from "./MenuMobile";
+import { useSession, signOut } from "next-auth/react";
 
 const Header = () => {
+  const { data: session } = useSession();
+  console.log("session", session);
+  const se = session ? (
+    <Link href={"/user"}>
+      <div className="w-8 md:w-12 h-8 md:h-12 rounded-full flex justify-center items-center hover:bg-black/[0.05] cursor-pointer relative">
+        <p
+          onClick={() => {
+            signOut();
+          }}
+        >
+          logout
+        </p>
+      </div>
+    </Link>
+  ) : (
+    <p>login</p>
+  );
   // USE STATE
   const [mobileMenu, setMobileMenu] = useState(false);
   const [show, setShow] = useState("translate-y-0");
@@ -72,12 +90,7 @@ const Header = () => {
 
         <div className="flex items-center gap-2 text-black">
           {/* Icon start (LOGIN ICON) */}
-
-          <Link href={"/user"}>
-            <div className="w-8 md:w-12 h-8 md:h-12 rounded-full flex justify-center items-center hover:bg-black/[0.05] cursor-pointer relative">
-              <BiUserCircle className="text-[24px] md:text-[30px]" />
-            </div>
-          </Link>
+          {se}
           {/* Icon end */}
 
           {/* Icon start (CART ICON) */}

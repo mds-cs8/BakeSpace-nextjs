@@ -1,10 +1,21 @@
 "use client";
 import { Stack } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ProductCard } from "../ProductCard/ProductCard";
 import Link from "next/link";
+import axios from "axios";
 
 const Main = () => {
+  const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   axios.get("//192.168.100.133:8000/api/cakes").then((res) => {
+  //     setData(res.data.data);
+  //     console.log(res);
+  //   });
+  // }, []);
+  console.log(data);
+
   return (
     <Stack
       sx={{ width: "100%" }}
@@ -21,10 +32,10 @@ const Main = () => {
       <Stack sx={{ width: "100%" }}>
         <div className="flex w-full justify-center items-center">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-5 px-5 md:px-0">
-            {["a", "b", "c", "d", "e", "f"].map((item) => {
+            {["1", "2", "3", "4", "5", "6"].map((item) => {
               return (
-                <Link href={`/product/${item}`} key={item}>
-                  <ProductCard />
+                <Link href={`/product/${item.id}`} key={item}>
+                  <ProductCard  />
                 </Link>
               );
             })}
