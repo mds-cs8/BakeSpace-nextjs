@@ -1,7 +1,5 @@
-"use client";
 import Header from "./components/Header/Header";
 import "./globals.css";
-import { SessionProvider } from "next-auth/react";
 
 export const metadata = {
   title: "BAKESPACE | HOME",
@@ -11,11 +9,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <SessionProvider>
-        <body className="flex flex-col min-h-[100vh]">
-          <div>{children}</div>
-        </body>
-      </SessionProvider>
+      <body className="flex flex-col min-h-[100vh]">
+        <div>{children}</div>
+      </body>
     </html>
   );
 }
