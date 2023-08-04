@@ -1,7 +1,5 @@
-"use client";
 import SlideBar from "../components/slideBar/SlideBar";
 import "../globals.css";
-import { SessionProvider } from "next-auth/react";
 
 export const metadata = {
   title: "BAKESPACE | dashboard",
@@ -10,12 +8,10 @@ export const metadata = {
 
 export default function dashboardlayout({ children }) {
   return (
-    <SessionProvider>
-      <div className="flex w-[100%] mt-[70px]">
-        <SlideBar />
+    <div className="flex w-[100%] mt-[70px]">
+      <SlideBar />
 
-        {children}
-      </div>
-    </SessionProvider>
+      {children}
+    </div>
   );
 }
