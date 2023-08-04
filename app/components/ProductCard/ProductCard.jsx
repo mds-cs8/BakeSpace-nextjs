@@ -88,7 +88,7 @@ export const ProductCard = () => {
           sx={{
             background: "transparent",
             color: "#4cc0ff",
-            border: "1px solid #fff",
+            border: "2px solid #fff",
             boxShadow: "none",
             "&:hover": {
               border: "1px solid #4cc0ff",
