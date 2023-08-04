@@ -14,7 +14,6 @@ import Link from "next/link";
 // API BANNERS
 const banner = [
   { id: 1, alt: "bake", img: slide1, title: "fresh bake" },
-  { id: 2, alt: "bake", img: slide2, title: "Cake for Any Occasion" },
   { id: 3, alt: "bake", img: slide3, title: "delicious sweets" },
 ];
 // ----------------------------------------------------------
