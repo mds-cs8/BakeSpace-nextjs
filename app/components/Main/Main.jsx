@@ -6,7 +6,7 @@ import Link from "next/link";
 import axios from "axios";
 
 const Main = () => {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
   // useEffect(() => {
   //   axios.get("//192.168.100.133:8000/api/cakes").then((res) => {
@@ -14,7 +14,7 @@ const Main = () => {
   //     console.log(res);
   //   });
   // }, []);
-  console.log(data);
+  // console.log(data);
 
   return (
     <Stack
@@ -34,8 +34,8 @@ const Main = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-5 px-5 md:px-0">
             {["1", "2", "3", "4", "5", "6"].map((item) => {
               return (
-                <Link href={`/product/${item.id}`} key={item}>
-                  <ProductCard  />
+                <Link href={`/product`} key={item}>
+                  <ProductCard />
                 </Link>
               );
             })}
