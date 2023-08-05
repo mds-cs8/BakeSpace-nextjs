@@ -25,9 +25,23 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Avatar from "@mui/material/Avatar";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 
 const drawerWidth = 240;
 
+const routing = [
+  { id: 1, name: "Dashboard", url: "/dashboard", icon: <DashboardIcon /> },
+  {
+    id: 2,
+    name: "All Products",
+    url: "/all-products",
+    icon: <ShoppingBasketIcon />,
+  },
+  { id: 3, name: "Add products", url: "/add-products", icon: <AddBoxIcon /> },
+];
 const openedMixin = (theme) => ({
   width: drawerWidth,
   transition: theme.transitions.create("width", {
@@ -62,6 +76,7 @@ const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
+  background: "#4cc0ff",
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -83,6 +98,7 @@ const Drawer = styled(MuiDrawer, {
   flexShrink: 0,
   whiteSpace: "nowrap",
   boxSizing: "border-box",
+
   ...(open && {
     ...openedMixin(theme),
     "& .MuiDrawer-paper": openedMixin(theme),
@@ -113,6 +129,8 @@ export default function MiniDrawer() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const currentRoute = usePathname();
 
   return (
     <Box sx={{ display: "flex", mb: "90px" }}>
@@ -187,27 +205,38 @@ export default function MiniDrawer() {
         </DrawerHeader>
 
         <List>
-          {["Dashboard", "All product", "Add Product"].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
+          {routing.map((text) => (
+            <Link
+              key={text.id}
+              href={text.url}
+              className={
+                currentRoute === text.url ? "activeLink" : "non-activeLink"
+              }
+            >
+              <ListItem disablePadding sx={{ display: "block" }}>
+                <ListItemButton
                   sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
+                    minHeight: 48,
+                    justifyContent: open ? "initial" : "center",
+                    px: 2.5,
                   }}
                 >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
+                  <ListItemIcon
+                    sx={{
+                      minWidth: 0,
+                      mr: open ? 3 : "auto",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {text.icon}
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={text.name}
+                    sx={{ opacity: open ? 1 : 0 }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            </Link>
           ))}
         </List>
       </Drawer>
