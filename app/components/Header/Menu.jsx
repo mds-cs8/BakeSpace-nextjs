@@ -4,11 +4,11 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-// list in nav 
+// list in nav
 const data = [
   { id: 1, name: "Home", url: "/" },
   { id: 2, name: "Products", url: "/products" },
-  { id: 3, name: "Bakeries", url: "/bakeries" },
+  { id: 3, name: "Bakeries", url: "/dashboard" },
   { id: 4, name: "Open Your Bakery", url: "/contact" },
 ];
 

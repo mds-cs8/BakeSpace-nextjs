@@ -36,8 +36,8 @@ const routing = [
   { id: 1, name: "Dashboard", url: "/dashboard", icon: <DashboardIcon /> },
   {
     id: 2,
-    name: "All Products",
-    url: "/all-products",
+    name: "Orders",
+    url: "dashboard/order",
     icon: <ShoppingBasketIcon />,
   },
   { id: 3, name: "Add products", url: "/add-products", icon: <AddBoxIcon /> },
