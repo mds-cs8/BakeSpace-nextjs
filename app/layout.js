@@ -1,5 +1,6 @@
 import Header from "./components/Header/Header";
 import "./globals.css";
+import { AuthProvider } from "./provider";
 
 export const metadata = {
   title: "BAKESPACE | HOME",
@@ -10,7 +11,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="flex flex-col min-h-[100vh]">
-        <div>{children}</div>
+        <AuthProvider>
+          <div>{children}</div>
+        </AuthProvider>
       </body>
     </html>
   );

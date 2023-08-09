@@ -9,29 +9,32 @@ import { BsCart } from "react-icons/bs";
 import { BiMenuAltRight } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 import Image from "next/image";
+import { useSession, signOut } from "next-auth/react";
 
 // IMPORT COMPONENTS
 import Menu from "./Menu";
 import MenuMobile from "./MenuMobile";
 
 const Header = () => {
-  // const { data: session } = useSession();
-  // console.log("session", session);
-  // const se = session ? (
-  //   <Link href={"/user"}>
-  //     <div className="w-8 md:w-12 h-8 md:h-12 rounded-full flex justify-center items-center hover:bg-black/[0.05] cursor-pointer relative">
-  //       <p
-  //         onClick={() => {
-  //           signOut();
-  //         }}
-  //       >
-  //         logout
-  //       </p>
-  //     </div>
-  //   </Link>
-  // ) : (
-  //   <p>login</p>
-  // );
+  const { data: session } = useSession();
+  console.log("session", session?.user.phone);
+  const se = session ? (
+    <Link href={"/user"}>
+      <div className="w-8 md:w-12 h-8 md:h-12 rounded-full flex justify-center items-center hover:bg-black/[0.05] cursor-pointer relative">
+        <p
+          onClick={() => {
+            signOut();
+          }}
+        >
+          logout
+        </p>
+      </div>
+    </Link>
+  ) : (
+    <Link href={"/login"}>
+      <p>login</p>
+    </Link>
+  );
   // USE STATE
   const [mobileMenu, setMobileMenu] = useState(false);
   const [show, setShow] = useState("translate-y-0");
@@ -89,7 +92,7 @@ const Header = () => {
 
         <div className="flex items-center gap-2 text-black">
           {/* Icon start (LOGIN ICON) */}
-          {/* {se} */}
+          {se}
           {/* Icon end */}
 
           {/* Icon start (CART ICON) */}
