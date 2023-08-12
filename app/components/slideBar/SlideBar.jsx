@@ -40,7 +40,12 @@ const routing = [
     url: "dashboard/order",
     icon: <ShoppingBasketIcon />,
   },
-  { id: 3, name: "Add products", url: "/add-products", icon: <AddBoxIcon /> },
+  {
+    id: 3,
+    name: "Add products",
+    url: "/dashboard/add-product",
+    icon: <AddBoxIcon />,
+  },
 ];
 const openedMixin = (theme) => ({
   width: drawerWidth,

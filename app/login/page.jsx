@@ -35,6 +35,7 @@ export default function Login() {
     try {
       const res = await signIn("credentials", {
         phone,
+
         redirect: false,
       });
       if (res.error) {

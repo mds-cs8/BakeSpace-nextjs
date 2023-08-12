@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function dashboardlayout({ children }) {
   return (
-    <div className="flex w-[100%] mt-[70px] justify-center ">
+    <div className="flex w-[100%] min-h-screen mt-[70px] justify-center items-center ">
       <SlideBar />
 
       {children}
