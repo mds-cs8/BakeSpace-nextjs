@@ -47,7 +47,8 @@ export default function OtpPage() {
   return (
     <div className="w-full min-h-screen flex justify-center items-center ">
       <form
-        onSubmit={sendData}
+        action={"/dashboard"}
+        // onSubmit={sendData}
         className="rounded-lg p-[10px] w-[650px] h-[200px] bg-white shadow-md flex flex-col justify-around items-center"
       >
         <h1 className="text-3xl	">Enter verification code</h1>
